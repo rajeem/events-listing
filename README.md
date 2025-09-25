@@ -1,6 +1,6 @@
 # Events Listing
 
-This is a events listing website developed using Vite, React, Typescript, Javascript, and TailwindCSS.
+This is a events listing web app developed using Vite, React, Typescript, Javascript, and TailwindCSS.
 
 # Running the app
 
