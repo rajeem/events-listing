@@ -2,7 +2,7 @@
 
 This is a events listing website developed using Vite, React, Typescript, Javascript, and TailwindCSS.
 
-#Running the app
+# Running the app
 
 To run the app, open the project in VS Code then run the following commands:
 
