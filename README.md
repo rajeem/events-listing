@@ -10,3 +10,9 @@ To run the app, open the project in VS Code then run the following commands:
 
 
 `npm run dev`
+
+
+# Demo App
+A demo app is deployed to
+
+https://eventslistings.s3.ap-southeast-1.amazonaws.com/index.html
