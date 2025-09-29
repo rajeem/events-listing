@@ -4,12 +4,7 @@ This is a events listing web app developed using Vite, React, Typescript, Javasc
 
 # Running the app
 
-To run the app, open the project in VS Code then run the following commands:
-
-`npm install`
-
-
-`npm run dev`
+To run the app, run the back-end code using Visual Studio IDE then run the front-end code using Visual Studio Code.
 
 
 # Demo App
