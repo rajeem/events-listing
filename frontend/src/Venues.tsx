@@ -1,12 +1,18 @@
 import { useState } from "react";
 import type { Venue, VenueEvent } from "./models";
 import EventCard from "./EventCard";
+import { API_URL } from "./config";
 
 function Venues({ venues }: { venues: Venue[] }) {
     const [selectedVenue, setSelectedVenue] = useState<Venue | null>(null);
+    const [events, setEvents] = useState<VenueEvent[] | null>(null);
     const [selectedEvent, setSelectedEvent] = useState<VenueEvent | null>(null);
 
     const handleVenueClick = (venue: Venue) => {
+        fetch(API_URL + "/api/venueevents?venueId=" + venue.id)
+              .then(res => res.json())
+              .then(data => setEvents(data))
+              .catch(err => console.error(err));
         setSelectedVenue(venue);
         setSelectedEvent(null);
     };
@@ -18,6 +24,7 @@ function Venues({ venues }: { venues: Venue[] }) {
                     {venues.map((venue) => (
                         <li key={venue.id}>
                             <button className="block hover:bg-gray-700 p-2 rounded" onClick={() => handleVenueClick(venue)}>
+                                {(venue.id === selectedVenue?.id) && "➤ "}
                                 {venue.name}
                             </button>
                         </li>
@@ -27,8 +34,8 @@ function Venues({ venues }: { venues: Venue[] }) {
 
             <main className="flex-1 p-6 bg-gray-100">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    {selectedVenue && selectedVenue.events.map((event) =>
-                        (<EventCard event={event} handleEventClick={() => setSelectedEvent(event)} />))}
+                    {events && events.map((event) =>
+                        (<EventCard key={event.id} event={event} handleEventClick={() => setSelectedEvent(event)} />))}
                 </div>
             </main>
 

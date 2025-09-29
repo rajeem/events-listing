@@ -1,0 +1,35 @@
+# Build results
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+# Uncomment if using Paket
+# paket-files/
+
+# Azure
+.publish/
+*.azurePubxml
+*.pubxml
+*.publishproj
+
+# Others
+*.dbmdl
+*.bak
+*.log
