@@ -16,8 +16,19 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("VenueEventsDB"));
 builder.Services.AddScoped<IVenueEventsService, VenueEventsService>();
 builder.Services.AddScoped<IVenuesService, VenuesService>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
 
 var app = builder.Build();
+app.UseCors("AllowAll");
+
 
 SeedSampleData(app);
 

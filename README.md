@@ -8,6 +8,8 @@ To run the app, run the back-end code using Visual Studio IDE then run the front
 
 
 # Demo App
-A demo app is deployed to
+A demo app is deployed by following the link below:
 
-https://eventslistings.s3.ap-southeast-1.amazonaws.com/index.html
+http://eventslistings.s3.ap-southeast-1.amazonaws.com/index.html
+
+Please do take note that the link is using http instead of https.
